@@ -1,14 +1,14 @@
-* {
-  margin: 0;
+*{margin: 0;
   padding: 0;
-  background-color: rgb(246, 187, 58);
-}
+  background-color: rgb(255, 247, 0);
+  background-color: rgb(254, 244, 60);}
 .title{
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 45px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
 }
 .header {
   display: flex;
@@ -38,10 +38,42 @@
   color: rgb(34, 34, 34);
 }
 .item #data{
-  color: rgb(83, 82, 63);
+  color: rgb(116, 115, 93);
+}
+.item #add{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(252, 234, 34);
+  border-radius: 20px;
+}
+#text{
+  border-radius: 5px;
+  
 }
 .signs{
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
+.fa-trash{
+  border: solid black 1px;
+  width: 100%;
+  padding: 3px;
+  border-radius: 20%;
+}
+.fa-thumbtack{
+  border: solid black 1px;
+  width: 100%;
+  padding: 3px;
+  border-radius: 20%;
+}
+.fa-pen{
+  border: solid black 1px;
+  width: 100%;
+  padding: 3px;
+  border-radius: 20%;
+}
+.done{
+  text-decoration: line-through;
+ background-color: rgb(34, 34, 34);
+}
+
