@@ -1,15 +1,31 @@
-*{margin: 0;
+@font-face {
+  font-family: "ddddd";
+  src: url(Pacifico-Regular.ttf);
+}
+
+* {
+  margin: 0;
   padding: 0;
-  background-color: rgb(255, 247, 0);
-  background-color: rgb(254, 244, 60);}
-.title{
+}
+
+body {
+
+  background-image: linear-gradient(to bottom, rgb(255, 251, 0), rgb(3, 255, 247));
+  background-repeat:no-repeat ;
+  background-size: cover;
+  min-height: 100vh;
+  
+}
+
+.title {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 45px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "ddddd";
   margin: 0;
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -20,76 +36,99 @@
   margin-right: 20px;
   margin-left: 20px;
 }
-.notes{
+
+.notes {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 11px;
 }
-.item{
+
+.item {
   display: flex;
   flex-direction: column;
-  height: 90px;
-  border: solid black 1px;
+  border: solid black 2px;
   max-width: 200px;
   margin: 10px;
-  padding: 10px;
-  border-radius: 5%;
-  background-color: rgb(132, 255, 0);
+  background-color: rgba(0, 0, 0, 0.023);
+  position: relative;
+  min-width: 150px;
+  transition: all 1s;
 }
-.item h2{
+
+.item h2 {
   background-color: rgb(0, 0, 0, 0);
 }
-.item h3{
+
+.item h3 {
   color: rgb(34, 34, 34);
   background-color: rgb(0, 0, 0, 0);
+  padding: 10px;
 }
-.item #data{
-  color: rgb(116, 115, 93);
+
+.item #data {
+  color: rgb(36, 35, 10);
   background-color: rgb(0, 0, 0, 0);
+  font-size: 0.5rem;
+  position: absolute;
+  top: 30px;
+  right: 3px;
 }
-.item #add{
+
+.item #add {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: rgb(252, 234, 34);
   border-radius: 20px;
 }
-#text{
+
+#text {
   border-radius: 5px;
   background-color: rgb(0, 0, 0, 0);
-  
+
 }
-.signs{
+
+.signs {
   width: 100%;
   display: flex;
   justify-content: space-around;
   background-color: rgb(0, 0, 0, 0);
-  color: blue;
+  color: rgb(0, 0, 0);
 }
-.fa-trash{
-  border: solid black 1px;
+
+.fa-trash {
   width: 100%;
   padding: 3px;
   border-radius: 20%;
 }
-.fa-thumbtack{
-  border: solid black 1px;
+
+.fa-thumbtack {
   width: 100%;
   padding: 3px;
   border-radius: 20%;
 }
-.fa-pen{
-  border: solid black 1px;
+
+.fa-pen {
   width: 100%;
   padding: 3px;
-  border-radius: 20%;
+
 }
-.done{
+
+.done {
   text-decoration: line-through;
- background-color: rgb(255, 150, 150);
+  background-color: rgb(210, 242, 243);
+  color: gray;
 }
-.done .signs{
+
+.done .signs {
   text-decoration: line-through;
- color: rgb(247, 87, 87);
+  color: rgb(0, 0, 0);
 }
-.overlay{
+.item h2{
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.overlay {
   position: fixed;
   inset: 0;
   display: flex;
@@ -99,28 +138,64 @@
   backdrop-filter: blur(5px);
   display: none;
 }
-.window{
+
+.window {
   display: flex;
   flex-direction: column;
   gap: 5px;
   align-items: stretch;
   width: 100%;
   max-width: 500px;
+  padding: 0 10px;
 }
 
-.window input{
-  border-radius: 5px;
-  padding: 5px;
-}
-.window textarea{
-  border-radius: 5px;
-}
-.window .buttonos{
+
+.window .buttonos {
   display: flex;
   gap: 5px;
 }
-#change{
+
+#change {
   flex-grow: 1;
 }
 
+#iner, #changeTitle{
+  padding: 5px 0px;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+background: none;
+}
 
+#iner:focus, #text:focus{
+  outline: none;
+  
+}
+
+#text, #changeText{
+  border: none;
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-radius: 0;
+  resize: none;
+  background: none;
+  
+}
+
+#add, #cancel,#change{
+  background: none;
+  border: 3px dashed black;
+  padding: 5px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+#add:hover{
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+@media all and (max-width:450px){
+  .notes {
+    flex-direction: column;
+  }
+  .item{max-width: 100%;}
+}
