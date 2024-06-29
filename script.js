@@ -40,6 +40,7 @@ $(document).ready(function () {
   })
   function delere(e) {
     note = note.filter((n) => n.indexOf(e) == -1)
+    count = count - 1
   }
   function draw() {
     $(".notes").empty()
@@ -57,11 +58,13 @@ $(document).ready(function () {
     $("#changeTitle").val(newTitle)
     $("#changeText").val(newText)
     lastChange = $(this).parent().parent().attr("class")
+    console.log(lastChange)
   })
   $("#change").on("click", function () {
     newTitle = $('#changeTitle').val()
     newText = $("#changeText").val()
     console.log(lastChange.slice(6))
+    
     let elem = note.find(e => e.indexOf(lastChange) != -1)
     note[note.indexOf(elem)] = `
     <div class="${lastChange}">

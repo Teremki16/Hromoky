@@ -119,6 +119,9 @@ body {
   color: gray;
 }
 
+.done #h2{
+  color:rgb(178, 178, 178);
+}
 .done .signs {
   text-decoration: line-through;
   color: rgb(0, 0, 0);
